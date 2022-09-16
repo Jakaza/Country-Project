@@ -1,0 +1,34 @@
+body{
+    /* background-color: red; */
+}
+
+main{
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+
+.custom-input-d{
+    /* background-color: red; */
+    width: 90% !important;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.container{
+    width: 85% !important;
+    max-width: 750px;
+}
+
+
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    color: white;
+    padding-top: 25px;
+    text-align: center;
+    background-color: rgb(49, 49, 55);
+}
