@@ -1,8 +1,7 @@
 <?php 
-
-    // $connection = require_once('config/DBConnection.php');
-    include_once('backend/City.php');
-    include_once('backend/CityManager.php');
+    
+    require('../backend/city.php');
+    require('../backend/citymanager.php');
 
     if(isset($_POST['submit'])){
 
@@ -10,17 +9,17 @@
         $population = intval($_POST['population']);
         $latitude = floatval($_POST['latitude']);
         $longitude = floatval($_POST['longitude']);
-
         $city = new City($name, $population, $latitude,$longitude);
-
         $ciyManager = new CityManager();
-        $ciyManager->addCity($city );
-        // header('Location: index.php');
+        $id = $_POST["id"];
+        
+        if($id){
+            $ciyManager->update($city,$id); 
+        }else{
+            $ciyManager->addCity($city);
+        }
+
     }
-
-
-
-
 
 
 ?>
@@ -30,11 +29,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once('partials/head.php') ?>
+<?php include_once('../partials/head.php') ?>
 
 <body>
 
-    <?php include_once('partials/navbar.php') ?>
+    <?php include_once('../partials/navbar.php') ?>
 
     <main>
 
@@ -67,7 +66,7 @@
 
     </main>
 
-    <?php include_once('partials/footer.php') ?>
+    <?php include_once('../partials/footer.php') ?>
 
 </body>
 
